@@ -226,6 +226,7 @@ header nav ul li:active {
 
 div#captioned-gallery { 
   width: 100%; overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
 
 div.slider { 

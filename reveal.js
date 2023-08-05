@@ -19,10 +19,23 @@ window.addEventListener("load", (event) => {
 
     const observer = new IntersectionObserver(handleIntersect, options);
     var target = document.querySelectorAll('[class*="reveal-"]');
-    console.log(target)
     target.forEach( section => {
         observer.observe(section);
     });
 
+    preloadImages();
+
 });
 
+function preloadImages() {
+    var images = document.querySelectorAll("img");
+    var loadedImages = 0;
+
+    var sliderCount = document.querySelector(".slider").querySelectorAll("div").length;
+
+
+    for (var i = 0; i < images.length; i++) {
+        var img = new Image();
+        img.src = images[i].src; // Extract the image URL and preload the image
+    }
+}
