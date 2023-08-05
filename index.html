@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="accueil.css">
+    <script src="effect.js"></script>
+    <script src="reveal.js"></script>
+    <title>Accueil</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href=""><li>Education</li></a>
+                <a href=""><li>Projects</li> </a>
+                <h1><a ><li>Jordy Gelb</li></a></h1>
+                <a href=""><li>Personnal work</li> </a>
+                <a href=""><li>Contact</li> </a>              
+            </ul>
+        </nav>
+    </header>
+
+
+    <div id="test" class="reveal-1">
+        <div id="captioned-gallery">
+    
+            <div class="slider">
+                <div class="slide">
+                    <img src="images/N&L.PNG" alt="Numbers & Letters Game">
+                </div>
+                <div class="slide">
+                    <img src="images/GetCoocked.png" alt="GetCoocked game">
+                </div>
+                <div class="slide">
+                    <img src="images/Boby.png" alt="Who's gonna save Boby">
+                </div>
+                <div class="slide">
+                    <img src="images/N&L.PNG" alt="Numbers & Letters Game">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="about">
+        <h2>About Me</h2>
+        <p>Hello there! I'm Jordy, a French student with a passion for both video games and programming. 
+            My dream is to join an exceptional team and actively contribute to the creation of incredible video games that are not only fun but also captivating, providing unforgettable experiences for players!
+            I am naturally curious and enjoy continuously learning about video games. Although my main interests lie in software architectures, gameplay mechanics, and optimization, I also like to explore various domains and gain experience in new subjects.
+        </p>
+        <p>
+            Here you can see some of the projects I've had the opportunity of contributing to, and some of the personal-fun-things I've been working on.
+            It's the first personnal website I ever created using only HTML/CSS/Javascript. I'll try to keep it up to date and add the last projects I'm working on.
+            
+        </p>
+        <p>
+            If you have any questions please feel free to <a href="">contact me</a>!
+        </p>
+    </div>
+
+    <div class="separationTitle">
+        <h2>Education</h2>
+    </div>
+
+    <div class="BottomSectionSeparator">
+        <section class="educationSection reveal-2">
+            <div>
+                <img src="images/UGA.svg" alt="">
+            </div>
+            <div>
+                <h3>'University of Applied Sciences Diploma in Computer science' (DUT INFO)</h3>
+                <h4>Université Grenoble Alpes</h4>
+                
+                <p id="date">
+                    2019-2021 
+                </p>
+                <p>
+                    Two-year technical college degree that not only provided me with a strong foundation in computer science but also taught me how to work automously and collaborate effectively in diverse teams.
+                </p>
+            </div>
+        </section>
+
+        <section class="educationSection reveal-3">
+            <div>
+                <img src="images/ensicaen.png" alt="">
+            </div>
+            <div>
+                <h3>'Master engineering in Computer Science'</h3>
+                <h4>ENSICAEN</h4>
+                
+                <p id="date">
+                    2021-2024
+                </p>
+                <p>
+                    Three year formation in computer science with a specialisation in AI and Signal Processing. 
+                    During this period, I strenghtened my theorical knowledge in areas such as mathematics, software architecture, algorithmics and more. 
+                    It also provided me with an excellent opportunity to apply the competences acquired in previous years to the creation of more complex projects.
+                </p>
+            </div>
+        </section>
+
+        <section class="educationSection reveal-4">
+            <div>
+                <img src="images/uqac.png" alt="">
+            </div>
+            <div>
+                <h3>'Master's in Computer Science (Video Games)'</h3>
+                <h4>Université du Québec à Chicoutimi</h4>
+                
+                <p id="date">
+                    2023-2024
+                </p>
+                <p>
+                    Double diploma in cooperation with the ensicaen. My goal here is to learn more about video game developpement.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <div  class="separationTitle">
+        <h2>Projects</h2>
+    </div>
+
+    <div class="grid_wrapper BottomSectionSeparator">
+        <div class="grid_container">
+        
+            <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/mangeTaSoupe.png" alt=""></button>
+                <p class="reveal-3">Mange ta soupe</p>
+                <!--Invisible tab-->
+                <div class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>Mange ta soupe <br>2021</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p>'Mange ta soupe' (Eat your soup) marks my debut as a video game developer. 
+                                I created this game during a 48-hour game jam organized by the University Grenoble Alpes, with the intriguing themes of 'Dreaming' and 'Fruits and Vegetables.' 
+                                The language "Python" and the main library "pygame" were constraint imposed by the school.
+                            </p>   
+                            
+                            <p>
+                                Teaming up with two other students, we created a fun 2D survival game, adopting a top-down view. 
+                                The game's storyline revolves around a rebellious kid who adamantly refuses to finish his meal before bedtime. 
+                                As a result, he must defend in his dream against relentless waves of vengeful carrots and furious tentacular angry bananas. 
+                                To survive the challenges, the player strategically places defenses and upgrades his stats with the money he earns fending off his oponents.
+                            </p>
+    
+                            <p>Gameplay footage: </p>
+                            <img src="images/mangeTaSoupeTrailer.gif" alt="">
+    
+                            <p>My main task was to organise the team and work on the core mechanics of the game.
+                                I learned:
+                            </p>
+                            <ul>
+                                <li>The basics of video game developpement</li>
+                                <li>How to handle spritesheet and 2D assets</li>
+                                <li>How to handle important project with tight deadlines</li>
+                                <li>How to use version control system: in this case git and github</li>
+                            </ul>
+    
+                            <p>You can find the project on my <a href="https://github.com/JojoGelb/GameJam">Github</a>!</p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/Formule1.PNG" alt=""></button>
+                <p class="reveal-3">F1 Grand Prix</p>
+                <!--Invisible tab-->
+                <div class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>F1 Grand Prix<br>2022</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p> The 'Formule 1 Grand Prix' is an AI competition organised by the ENSICAEN in 2022. 
+                                In team of two, the participants must create the best AI capable of finishing any race the fastest. 
+                                The competition is not only about pathfinding, the pilot must take into account its gas consuption to be able to finish the race. 
+                                There are also several obstacle on the way such as sand pit, walls and even others player that can block the progression of each other.
+                            </p>   
+                            
+                            <p>Here is a footage of our best racer (The Goose) competing against another participant of the competition</p>
+                            <img src="images/Formule1.gif" alt="">
+    
+                            <p>
+                                The language imposed for this project is the C. This project was an excellent occasion to master this language and learn about several kind of pathfinding algorithm. 
+                                In the end we decided to use the A Start algorithm. Coupled with a complex graph and a heuristic using a simple yet effective heat map, our racer won the majority of the races.
+                            </p>
+    
+                            <p>
+                                During this project I learned a lot about:
+                            </p>
+    
+                            <ul>
+                                <li>AI algorithm and path finding</li>
+                                <li>C language, memory manipulation and project debugging</li>
+                                <li>A little bit of hacking: I loved tweaking the game and forcing parameters like the change of my pilot for a Goose</li>
+                                <li>Team work on a small project</li>
+                            </ul>
+    
+                            <p>You can find the project on my <a href="https://github.com/JojoGelb/GameJam">Github</a> and also a short <a href="https://docs.google.com/document/d/12vipN7HCMTK8PbbJngBeyrGTwAsboC_7LYphYqxM9rg/edit?usp=sharing">report</a> I wrote about the solution we provided</p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/NumberAndLetter.jpg" alt=""></button>
+                <p class="reveal-3">Numbers & Letters VR</p>
+                <!--Invisible tab-->
+                <div class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>Numbers & Letters VR<br>2023</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p>'Numbers & Letters' is a mathematics and litteracy puzzle game in VR. 
+                                In the number part of the game, the player must solve equations by combining the numbers in the scene using the operators provided. 
+                                In the letter part of the game, the player must find the missing letter to complete a word.
+                                <br><br>
+                                During my 2nd year internship of my engineering studies, I participated in the creation of the third significant update of the game. 
+                                This update introduced two exciting game modes, "Number Whack" and "Number Archery," along with successfully porting the game to the Oculus Quest platform.
+                            </p>   
+                            <p>Here is the trailer we published: </p>
+                            
+                            <iframe width="824" height="638" src="https://www.youtube.com/embed/k15zmTozbg8" title="Numbers and letters virtual reality game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+                            <p>
+                                During this internship I worked as the head of the developpement team composed of 8 other students. 
+                                My main task was to coordinate the progression of the two new game modes while actively refactoring, optimising, and correcting the bug of the first part of the game.
+                                I worked on most of the part of the project and helped, thanks to my knowledge obtained previously through my personnal work and Game Jam on Unity, my colleague on important topics such as the key concepts of the engine, game architecture, and the rules to write clean code in C#.
+                            </p>
+
+                            <p>
+                                I learned a lot about the following concepts:
+                            </p>
+
+                            <ul>
+                                <li>Team management and handling tight deadlines</li>
+                                <li>Optimisation of a game (Render pipeline, Occlusion Oculling, batching, atlas for material / textures and mesh combining, Level of Detail, ect ...)</li>
+                                <li>Debugging and Profiling</li>
+                                <li>Software architecture and the SOLID rules</li>
+                            </ul>
+    
+                            <p>The easiest way to play the game is through its <a href="https://store.steampowered.com/app/869400/Numbers__Letters/">Steam page</a>.</p>
+                            <p>If you want to know more about the work I have done during this period, you can have a look at my report writen in <a href="">French</a> or at the translated version in <a href="">English</a> thanks to ChatGPT</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div  class="separationTitle">
+        <h2>Personnal work</h2>
+    </div>
+
+    <div class="grid_wrapper BottomSectionSeparator">
+        <div class="grid_container">
+        
+            <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/Goby.PNG" alt=""></button>
+                <p class="reveal-3">GMTK Game Jam 2023</p>
+                <!--Invisible tab-->
+                <div class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>Who's Gonna Save Goby <br>GMTK Game Jam 2023</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p>'Who's Gonna Save Goby' is a fun puzzle game I created for the GMTK Game Jam 2023 in cooperation with an other student.
+                                The GMTK Game Jam is an annual game making marathon, where individuals and teams try to make a game that fits a theme, in just 48 hours.
+                                The theme of the year was "Role Inversed". 
+                                We decided to create a game where the player control a dungeon and must change its shape to lead adventurers into deadly traps and prevent them from finding the boss.
+                            </p>   
+                            
+    
+                            <p>Gameplay footage: </p>
+                            <img src="" alt="TODO">
+    
+                            <p>During these 48 hours of non stop programming I learned a lot about the Unity engine and how to create a good demonstration of a game in a short time.</p>
+                            <p>I successfully implemented: </p>
+                            <ul>
+                                <li>The core of the gameplay mechanics</li>
+                                <li>The pathfinding for the adventurers group</li>
+                                <li>The dungeon generation as well as a system allowing the developer to save and load the dungeon in a json file</li>
+                                <li>The walls and the corners connection when placing a new tile on top of the map</li>
+                                <li>A part of the UI such as the health and the main menu</li>
+                            </ul>
+                            
+                            <p>The Jam was a stressing but a rewarding experience. We have seen a real improvement compared to the Jam we did last year as we finished in the top 30%. And we are already eager to participate at the next year competition</p>
+                            <p>You can find our game playable on brower on <a href="https://itch.io/jam/gmtk-2023/rate/2161177">itch.io</a>!</p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/RogueTheDice.PNG" alt=""></button>
+                <p class="reveal-3">GMTK Game Jam 2022</p>
+                <!--Invisible tab-->
+                <div class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>Rogue The Dice <br>GMTK Game Jam 2022</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p>'Rogue The Dice' is a fun rogue like / dungeon crawler game in 2D top down view I created for the GMTK Game Jam 2022 in cooperation with Woondack, an other student.
+                                The GMTK Game Jam is an annual game making marathon, where individuals and teams try to make a game that fits a theme, in just 48 hours.
+                                The theme of the year was "Roll of the dice". 
+                                We deciced to create for our first entry to the competition, a nervous game where the player must roam through a random generated dungeon and kill monsters.
+                            </p>   
+                            
+                            <p>Gameplay footage: </p>
+                            <img src="" alt="TODO">
+    
+                            <p>During these 48 hours of non stop programming I learned a lot about the basics of the Unity engine</p>
+                            <p>I successfully implemented: </p>
+                            <ul>
+                                <li>The core of the gameplay mechanics (shooting, aiming, moving around)</li>
+                                <li>The dungeon random generation that could be easily tweaked to add numerous room and intricate pathway</li>
+                                <li>The magazine and the dash mechanism to provide a faster experience to the player</li>
+                                <li>A part of the UI such as the damage message, the bullet case blending with the ground and the main menu</li>
+                            </ul>
+                            
+                            <p>This Game Jam was our first real experience in creating a video game on Unity. We had a lot of fun and learned about the first issues beginners run into when creating their first video game</p>
+                            <p>You can download our game on <a href="https://jojogelb.itch.io/rogue-the-dice">itch.io</a> and even leave a comment if you liked it!</p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/GetCoockedSquare.png" alt=""></button>
+                <p class="reveal-3">Get Coocked</p>
+                <!--Invisible tab-->
+                <div class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>Get Coocked<br>2023</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p>'Get Coocked' is a small video game I created following the tutorial of the youtuber "Code Monkey".
+                                This 10h long tutorial taught me the fundamental of Unity programming by going through every steps in the creation of a polished Indie Game.
+                            </p>   
+                            
+                            <iframe frameborder="0" src="https://itch.io/embed-upload/7840872?color=ffffff" allowfullscreen="" width="1200" height="820"><a href="https://jojogelb.itch.io/getcoockedtutorialproject">Play GetCoockedTutorialProject on itch.io</a></iframe>    
+                            
+                            <p>I learned:</p>
+                            <ul>
+                                <li>How to polish game using post processing effects and adding details improving the overall gameplay experience </li>
+                                <li>How to uses event systems in Unity</li>
+                                <li>How to refactor parts of the code in Unity to keep it clean and easily extensible</li>
+                            </ul>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div  class="about">
+        <h2>Contact</h2>
+        <p>Feel free to contact me about any opportunity, or just to chat about gamedev, coding or anything else!</p>
+        <section id="reseau">
+            <ul>
+                <li><a href="mailto:jojogelb75@gmail.com"><img src="images/Reseaux/Mail.png" alt="Logo mail"> </a></li>
+                <li><a href="www.linkedin.com/in/jordy-gelb"><img src="images/Reseaux/linkedin.png" alt="Logo Linkedin"></a></li>
+                <li><a href="https://discord.com/users/288747098084605963"><img src="images/Reseaux/discord.png" alt="Logo discord"></a></li>
+            </ul>
+        </section>
+
+    </div>
+
+
+
+</body>
+</html>
