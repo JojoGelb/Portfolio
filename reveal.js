@@ -25,6 +25,23 @@ window.addEventListener("load", (event) => {
 
     preloadImages();
 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const yOffset = -70;
+        console.log(this.getAttribute('href'))
+        const element = document.getElementById(this.getAttribute('href').substring(1)); 
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+
+        /*document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });*/
+    });
+});
+
 });
 
 function preloadImages() {
@@ -39,3 +56,4 @@ function preloadImages() {
         img.src = images[i].src; // Extract the image URL and preload the image
     }
 }
+

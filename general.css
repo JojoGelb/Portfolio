@@ -457,6 +457,7 @@ div.slide img { width: 100%; height: auto; }
 
   .projects_content ul{
     padding-top: 40px;
+    width: 80%;
   }
 
   .projects_content div:nth-child(2) p:last-child{
