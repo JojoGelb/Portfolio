@@ -450,14 +450,14 @@ div.slide img { width: 100%; height: auto; }
     width: 80%;
   }
 
-  .projects_content div:nth-child(2) img, .projects_content div:nth-child(2) iframe{
+  .projects_content div:nth-child(2) img, .projects_content div:nth-child(2) iframe, .projects_content div:nth-child(2) video{
     width: 80%;
     padding-top: 40px;
   }
 
-  .projects_content ul{
+  .projects_content ul, .projects_content ol{
     padding-top: 40px;
-    width: 80%;
+    width: 70%;
   }
 
   .projects_content div:nth-child(2) p:last-child{
