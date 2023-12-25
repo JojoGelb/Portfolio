@@ -315,6 +315,75 @@
                     </div>
                 </div>
             </div>
+
+            <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/MathPhys.jpg" alt=""></button>
+                <p class="reveal-3">Math and Physics for video games</p>
+                <!--Invisible tab-->
+                <div class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>Math and Physics for video games (UQAC)</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p>
+                                This project aimed to build a physics engine with 2 principal systems: particle simulation and rigidbody simulation. 
+                                To showcase the engine capabilities we also developed a simple graphic engine in Vulkan.
+                            </p>
+                            
+                            <p>
+                                Here is a quick overview of the two systems capabilities: <br>
+                                Particle simulation:
+                            </p>
+
+                            <ul>
+                                <li>Integrator for managing positions, velocities, and accelerations.</li>
+                                <li>Force generation handling gravity, friction, and springs.</li>
+                                <li>Collision detection system covering interpenetrations, rods, cables, and resting contacts.</li>
+                                <li>Collision resolution using impulses.</li>
+                            </ul>
+
+                            <p>Rigidbody simulation:</p>
+
+                            <ul>
+                                <li>Extended integrator to manage rotational physics in addition to previous aspects.</li>
+                                <li>More complex collision detection system using a grid for broad phase and a narrow phase to generate contacts (sphere, box, plane).</li>
+                                <li>More complex collision resolution using rotational physics and collision form datas.</li>
+                            </ul>
+
+                            <p>You can see in the video below a short demonstration video of the engine: </p>
+                            
+                            <iframe loading="lazy" width="1120" height="630"  src="https://www.youtube.com/embed/hNp4-aARCcI" title="Math and Physics for video games: Quick overview of the graphic and motor engine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                            <p>
+                                This project taught me about many concepts of video game developement that I have never experienced before.
+                                As an example, for the implementation of the graphic engine, I learned about:
+                            </p>
+
+                            <ul>
+                                <li>The implementation of a simple render pipeline</li>
+                                <li>Simple shader writting in HLSL</li>
+                                <li>The use of swap chains to draw on unused frame and then display it to the user</li>
+                                <li>The basics of 3D rendering(Perspective projection transformation, frustrum culling ...) </li>
+                            </ul>
+
+                            <p>For the physic engine, I learned about:  </p>
+
+                            <ul>
+                                <li>Several mathematics principle (relation between position, velocity, acceleration: integration, collision resolution ...)</li>
+                                <li>The way to implement any mathematics formula into my program and optimize the code for it to run smoothly </li>
+                                <li>Simple collision detection algorithm and when to use them to get the best performances</li>
+                                <li>How to quickly implement functionnalities for showcase and then refactoring it to allow future update</li>
+                            </ul>
+    
+                            <p>You can find the project on its <a href="https://github.com/JojoGelb/PhysicEngine">Github page</a>.<br>
+                                Click on the links to see the subject of our project in <a href="Ressources/SujetMathPhysique.pdf">French</a> and in <a href="Ressources/SujetMathPhysiqueEnglish.pdf">English</a>.<br> 
+                            If you want to know more about the work I have done during this period don't hesitate to send me a message. I will be more than happy to have a chat about it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
