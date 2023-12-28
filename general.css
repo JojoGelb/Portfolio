@@ -477,6 +477,7 @@ div.slide img { width: 100%; height: auto; }
     grid-gap: max(60px,10%); /* Adjust the gap between grid items as needed */
     justify-content: center; /* Equal spacing between grid items */
     width: fit-content;
+    height: max-content;
 
   }
   
@@ -495,16 +496,14 @@ div.slide img { width: 100%; height: auto; }
     display: flex;
     justify-content: center;
     align-items: center;
+    height: max-content;
   }
 
   @media screen and (max-width: 1136px) {
     /* Change to a single column layout when the screen size is 768px or smaller */
     .grid_container{
       grid-template-columns: 1fr; /* One column with equal width */
-    }
-
-    .grid_wrapper{
-        margin-bottom: 150px;
+      grid-gap: 40px;
     }
   }
 
