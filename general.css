@@ -411,6 +411,7 @@ div.slide img {
     color: white;
     font-size: var(--text-font-size);
     padding-top: 10px;
+    text-align: center;
 }
 
 /* The Modal (background) */
@@ -555,7 +556,7 @@ li {
 .projects {
     grid-column: span 1;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
     flex-direction: column;
 }
