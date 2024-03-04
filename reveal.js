@@ -59,6 +59,7 @@ function handlePageRedirection() {
         case "GetCoocked":
         case "shadow_hunter":
         case "CTS14":
+        case "WonderJam":
             ref = "PersonalWork"
             break;
     }
