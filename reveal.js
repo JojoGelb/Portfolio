@@ -60,7 +60,7 @@ function handlePageRedirection() {
         case "shadow_hunter":
         case "CTS14":
         case "WonderJam":
-            ref = "PersonalWork"
+        ref = "PersonalWork"
             break;
     }
 
