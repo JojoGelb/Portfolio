@@ -458,8 +458,17 @@ div.slide img {
     }
   }
 
-.projects_content p {
+.projects_content p,
+.projects_content div:nth-child(2) h2,
+.projects_content div:nth-child(2) h3,
+.projects_content div:nth-child(2) li,
+.projects_content div:nth-child(2) strong {
     color: black;
+}
+
+.projects_content div:nth-child(2) h2,
+.projects_content div:nth-child(2) h3 {
+    margin-top: 40px;
 }
 
 .projects_content div:nth-child(1) {
@@ -516,7 +525,6 @@ div.slide img {
 
 #FadingEcho .projects_content div:nth-child(2) h2 {
     color: black;
-    margin-top: 40px;
 }
 
 .projects_content div:nth-child(2) img,
@@ -537,7 +545,7 @@ div.slide img {
 }
 
 .projects_content div:nth-child(2) a,
-li {
+.projects_content div:nth-child(2) li {
     color: black;
     font-size: var(--text-font-size);
 }

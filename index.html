@@ -586,6 +586,114 @@
         <div class="grid_container">
             
             <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/PigRace.jpg" alt=""></button>
+                <p class="reveal-3">Pig Race</p>
+                <!--Invisible tab-->
+                <div id="PigRace" class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>Pig Race<br>Java / Spigot API - 2026</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p>
+                                Pig Race is a competitive multiplayer Minecraft minigame I developed in my free time to experiment with pathfinding algorithms, real-time AI navigation, and multiplayer gameplay systems.
+                            </p>
+                            <p>
+                                Several teams compete in a series of matches, with two teams facing each other at a time. Each team has a pig on its side of the arena, and the objective is simple: be the first team whose pig reaches the center of the arena.
+                            </p>
+                            <p>
+                                What makes the game interesting is that players do not directly control their pig. Instead, they must manipulate the environment and anticipate how the AI will react to it.
+                            </p>
+
+                            <p>Project presentation:</p>
+                            <iframe loading="lazy" width="1120" height="630" src="https://www.youtube.com/embed/vLHdI_DN9zg" title="Pig Race project presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                            <h2>Gameplay</h2>
+                            <p>
+                                Each match is divided into two phases. During the preparation phase, both teams are teleported to their opponent's side of the arena. Their goal is to construct a maze around the enemy pig that will make its path toward the center as long and difficult as possible.
+                            </p>
+                            <p>
+                                Once the preparation timer expires, both teams return to their own side and the race phase begins. The pigs automatically start navigating through the mazes created by the opposing teams.
+                            </p>
+                            <p>During the race, players can continue interacting with the arena by:</p>
+                            <ul>
+                                <li>Breaking blocks to open shorter routes.</li>
+                                <li>Placing new blocks to force a pig to take a different path.</li>
+                                <li>Replacing floor blocks with Soul Sand to slow a pig down.</li>
+                                <li>Replacing floor blocks with Gold Blocks to accelerate it.</li>
+                            </ul>
+                            <p>
+                                Because every modification can change the best route through the maze, teams have to constantly adapt. Players need to split responsibilities between improving their own pig's route, disrupting their opponent, and anticipating how both pigs will react to changes in the arena.
+                            </p>
+
+                            <h2>Custom AI & Pathfinding</h2>
+                            <p>
+                                One of my main goals with this project was to experiment with Minecraft AI rather than relying on the default entity navigation system.
+                            </p>
+                            <p>
+                                The pigs are spawned with their vanilla AI disabled and are controlled entirely by the plugin. Their route is calculated using Dijkstra's shortest-path algorithm, and the plugin manually moves them along the resulting path during the race.
+                            </p>
+                            <p>
+                                The environment can change at any moment, so the navigation system also needs to be dynamic. Whenever players modify relevant blocks, the path can be recalculated to adapt to the new maze.
+                            </p>
+                            <p>
+                                I also implemented path validation when placing blocks. If a player attempts to place a block that would completely prevent a pig from reaching its destination, the action is rejected. This allows players to manipulate the path freely without making a race impossible to finish.
+                            </p>
+                            <p>
+                                For the current version, Gold Blocks and Soul Sand modify the pig's movement speed but are deliberately not included in the pathfinding cost. This was a gameplay choice: during early playtests, I wanted the pig's navigation to remain predictable and easy for new players to understand.
+                            </p>
+                            <p>
+                                The system could easily be extended by assigning different traversal costs to those blocks in the navigation graph. The pig could then optimize for estimated travel time rather than simply finding the shortest navigable path.
+                            </p>
+
+                            <h2>Multiplayer Game Architecture</h2>
+                            <p>
+                                Beyond pathfinding, the project required implementing the complete lifecycle of a multiplayer minigame.
+                            </p>
+                            <p>The plugin handles:</p>
+                            <ul>
+                                <li>Round-robin matchmaking between teams.</li>
+                                <li>Programmatic generation of two mirrored arenas.</li>
+                                <li>Preparation, race, and end-of-match states.</li>
+                                <li>Timers and countdowns.</li>
+                                <li>Team scoring.</li>
+                                <li>Custom player abilities and cooldowns.</li>
+                                <li>Real-time arena modifications.</li>
+                                <li>Pig spawning, movement, and cleanup.</li>
+                                <li>Forced chunk loading for active arenas.</li>
+                                <li>Debug visualization of calculated paths directly inside the Minecraft world.</li>
+                            </ul>
+                            <p>
+                                Player abilities are implemented using custom inventory items identified through persistent metadata. Their availability and cooldowns depend on the current match state, allowing the same system to support abilities such as block placement, block destruction, and speed modifiers.
+                            </p>
+                            <p>
+                                Because the game is implemented entirely as a server-side Spigot plugin, players can join and play using an unmodified Minecraft client without installing any additional mods.
+                            </p>
+
+                            <h2>What I Learned</h2>
+                            <p>
+                                This project gave me an opportunity to combine gameplay programming and AI in a system where players directly interact with the AI's environment.
+                            </p>
+                            <p>In particular, I worked on:</p>
+                            <ul>
+                                <li>Graph construction and shortest-path algorithms.</li>
+                                <li>Dynamic pathfinding in an environment modified at runtime.</li>
+                                <li>Designing AI behavior that remains understandable to players.</li>
+                                <li>Server-side entity control and tick-based gameplay.</li>
+                                <li>Multiplayer state management and match orchestration.</li>
+                                <li>Building reusable gameplay abilities and cooldown systems.</li>
+                                <li>Debugging and visualizing navigation algorithms directly in-game.</li>
+                            </ul>
+                            <p>
+                                I especially enjoyed the relationship between AI and game design in this project. A technically more sophisticated pathfinding solution is not necessarily a better gameplay solution: the AI also needs to behave in a way that players can understand, predict, and strategically manipulate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects hoverSepia">
                 <button class="openModalBtn reveal-3"><img src="images/GenFightLogo.png" alt=""></button>
                 <p class="reveal-3">Wonderjam 2024</p>
                 <!--Invisible tab-->
