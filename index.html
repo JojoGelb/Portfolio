@@ -586,6 +586,175 @@
         <div class="grid_container">
             
             <div class="projects hoverSepia">
+                <button class="openModalBtn reveal-3"><img src="images/ArchmageLogo.jpg" alt=""></button>
+                <p class="reveal-3">Archmage</p>
+                <!--Invisible tab-->
+                <div id="Archmage" class="projects_tab">
+                    <div class="projects_content">
+                        <div>
+                            <h1>Archmage<br>Work in Progress - Java / Spigot API</h1>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div>
+                            <p>
+                                Archmage is a Minecraft magic-combat plugin I am developing in my free time, inspired by the wand-building system from Noita.
+                            </p>
+                            <p>
+                                The main goal of the project is to recreate the feeling of building a spell rather than simply selecting one. Players can collect spells in a grimoire, place them inside configurable wands, and combine projectiles, modifiers, and multicast effects to create new behaviors.
+                            </p>
+                            <p>
+                                A simple projectile can therefore become something much more complex depending on the spells surrounding it: it can deal additional damage, bounce between surfaces, pierce enemies, trigger lightning or explosions on impact, spawn entities, or be combined with several other projectiles in the same cast.
+                            </p>
+                            <p>
+                                The project is also an opportunity for me to experiment with data-driven game systems, modular spell composition, custom projectile behavior, and performance-aware Minecraft plugin architecture.
+                            </p>
+
+                            <p>Project presentation:</p>
+                            <iframe loading="lazy" width="1120" height="630" src="https://www.youtube.com/embed/zbtLgLamH10" title="Archmage project presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                            <h2>Wands & Spell Composition</h2>
+                            <p>
+                                Each wand has its own set of statistics, including properties such as mana, cooldown, reload time, spell slots, and casting behavior.
+                            </p>
+                            <p>
+                                When a wand is used, the plugin does not simply execute the selected spell. Instead, it walks through its spell list and progressively constructs a spell payload.
+                            </p>
+                            <p>Different types of spells can modify that payload:</p>
+                            <ul>
+                                <li>Projectile spells define what will ultimately be fired.</li>
+                                <li>Modifiers alter properties such as damage, speed, spread, or other statistics.</li>
+                                <li>Projectile modifiers add behavior to the resulting projectile, such as explosions or lightning on impact.</li>
+                                <li>Multicast spells allow several spell sequences to be evaluated as part of the same cast.</li>
+                            </ul>
+                            <p>
+                                This architecture allows complex spells to emerge from combinations of relatively small building blocks rather than requiring every possible spell interaction to be implemented manually.
+                            </p>
+                            <p>
+                                Designing the system this way was particularly interesting because spell execution cannot be treated as a simple list of independent actions. The order of the spells matters, and modifiers need to propagate through the cast while affecting the correct projectiles.
+                            </p>
+
+                            <h2>Data-Driven Spell System</h2>
+                            <p>
+                                Spell and wand definitions are stored in JSON files rather than being hard-coded into the plugin. This allows me to create and rebalance content without recompiling the project and keeps the gameplay data separated from the systems responsible for executing it.
+                            </p>
+                            <p>I also implemented a custom statistic system where modifiers can apply operations such as:</p>
+                            <ul>
+                                <li>Addition and subtraction.</li>
+                                <li>Multiplication and division.</li>
+                                <li>Minimum and maximum limits.</li>
+                                <li>Forced values.</li>
+                            </ul>
+                            <p>
+                                Statistics can also depend on other statistics. Because of this, the system tracks dependencies between them and prevents circular references from creating invalid calculations.
+                            </p>
+                            <p>
+                                This gives the spell system a flexible foundation for combining effects while keeping the underlying rules reusable.
+                            </p>
+
+                            <h2>Custom Projectiles</h2>
+                            <p>
+                                Another important part of the project is experimenting with projectile mechanics beyond Minecraft's default behavior.
+                            </p>
+                            <p>
+                                The plugin currently supports several types of attacks, including arrows, fireballs, eggs, ender pearls, teleport spells, and a custom laser projectile.
+                            </p>
+                            <p>Projectiles can be modified with properties such as:</p>
+                            <ul>
+                                <li>Spread and velocity changes.</li>
+                                <li>Damage modifiers.</li>
+                                <li>Piercing.</li>
+                                <li>Surface bouncing using vector reflection.</li>
+                                <li>Custom impact effects.</li>
+                                <li>Explosions and lightning.</li>
+                                <li>Cobweb placement.</li>
+                                <li>Entity spawning.</li>
+                            </ul>
+                            <p>
+                                Some effects use Minecraft entities as their underlying projectile, while others require custom collision and movement logic. The laser implementation, for example, performs its own intersection checks against entities and the environment.
+                            </p>
+                            <p>
+                                Spell definitions are kept separate from their active execution state through runtime context objects. This makes it possible for the same spell definition to be reused across many casts while each cast maintains its own state.
+                            </p>
+
+                            <h2>Mage, Wand & Grimoire Systems</h2>
+                            <p>
+                                Players can become Mages, giving them access to the different systems provided by the plugin.
+                            </p>
+                            <p>
+                                Their spells are stored inside a Grimoire, represented through a custom inventory interface. The UI supports storing and retrieving collected spells as well as navigating between categories and pages.
+                            </p>
+                            <p>
+                                Wands can also be edited through inventory-based interfaces, allowing players to manipulate their spell configuration directly inside Minecraft.
+                            </p>
+                            <p>
+                                Persistent information is stored using Spigot's PersistentDataContainer, allowing custom data to remain attached to players and items across server reloads.
+                            </p>
+                            <p>
+                                This was important for making the system feel like part of Minecraft itself rather than an external interface layered on top of the game.
+                            </p>
+
+                            <h2>Runtime Architecture & Performance</h2>
+                            <p>
+                                As the number of spells, projectiles, animations, and temporary gameplay objects increased, I also experimented with systems for managing their runtime cost.
+                            </p>
+                            <p>
+                                I created a custom event dispatcher where gameplay objects subscribe only to the Bukkit events associated with their UUID. This avoids having every active object process events that are irrelevant to it.
+                            </p>
+                            <p>
+                                For timed actions, I implemented a lightweight tick scheduler based on a tick wheel. Instead of continuously ticking every delayed action, tasks are stored according to the future server tick on which they need to execute.
+                            </p>
+                            <p>
+                                I also introduced an animation manager with a configurable display and particle budget so that visual effects can be controlled as the number of active spells increases.
+                            </p>
+
+                            <h2>Development Tools</h2>
+                            <p>
+                                Because Archmage is an experimental project with many interacting systems, I built several tools directly into the plugin to make iteration faster.
+                            </p>
+                            <p>Operator commands and debug interfaces allow me to quickly:</p>
+                            <ul>
+                                <li>Create and remove Mage players.</li>
+                                <li>Spawn specific JSON-defined wands.</li>
+                                <li>Generate Grimoires containing test spells.</li>
+                                <li>Inspect the internal state of a wand.</li>
+                                <li>Adjust animation budgets.</li>
+                                <li>Visualize and experiment with Minecraft Display entities.</li>
+                                <li>Test transformations, rotations, particles, and animation systems.</li>
+                            </ul>
+                            <p>
+                                I am also experimenting with a custom resource pack and Display entities to eventually give spells and wands more distinctive visual identities.
+                            </p>
+
+                            <h2>What I Learned</h2>
+                            <p>
+                                Archmage is still actively evolving, and a large part of its value for me is being able to experiment with systems that would be difficult to explore in a smaller, more rigid project.
+                            </p>
+                            <p>In particular, I have been working on:</p>
+                            <ul>
+                                <li>Data-driven gameplay architecture.</li>
+                                <li>Composable spell and effect systems.</li>
+                                <li>Runtime state versus static game-data separation.</li>
+                                <li>Custom projectile physics and collision detection.</li>
+                                <li>Vector mathematics for behaviors such as bouncing.</li>
+                                <li>Persistent item and player data.</li>
+                                <li>Inventory-based user interfaces.</li>
+                                <li>Event-driven gameplay architecture.</li>
+                                <li>Dependency-aware statistic systems.</li>
+                                <li>Performance-conscious scheduling and animation.</li>
+                                <li>Building debugging tools for complex gameplay systems.</li>
+                            </ul>
+                            <p>
+                                One of the most interesting challenges has been designing the project so that new spells create new combinations rather than just new isolated abilities.
+                            </p>
+                            <p>
+                                The long-term goal is for a relatively small collection of projectiles, modifiers, and effects to produce a much larger space of possible wands, letting players experiment with the system and discover powerful or unexpected interactions themselves.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects hoverSepia">
                 <button class="openModalBtn reveal-3"><img src="images/PigRace.jpg" alt=""></button>
                 <p class="reveal-3">Pig Race</p>
                 <!--Invisible tab-->
